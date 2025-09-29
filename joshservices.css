@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Go Back Arrow */
+.go-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  z-index: 10;
+  transition: transform 0.2s;
+}
+.go-back:hover {
+  transform: scale(1.2);
+}
+
+/* Main Container */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 50px;
+}
+
+/* Glowing Horizontal Line */
+.glow-line {
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, blue, red, gold);
+  animation: blink-glow 2s infinite;
+  box-shadow: 0 0 15px blue;
+}
+
+/* Circles */
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.circle:hover {
+  transform: scale(1.05);
+  background-color: #888;
+}
+
+/* Background image for COURSES */
+.courses-circle {
+  background-image: url('courses.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Background image for AUDIOS */
+.audios-circle {
+  background-image: url('audio.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Blinking Glow Animation */
+@keyframes blink-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px blue, 0 0 10px red, 0 0 15px gold;
+  }
+  50% {
+    box-shadow: 0 0 15px gold, 0 0 10px red, 0 0 5px blue;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .circle-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .glow-line {
+    width: 80%;
+  }
+}
+
